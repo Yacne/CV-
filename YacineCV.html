@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Yacine ben mokrane</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .switch-lang {
+            float: right;
+            color: #000;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .switch-lang:hover {
+            color: #007BFF;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            color: #555;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            margin: 0 0 10px;
+        }
+        
+        
+        
+    /* لتكبير الصورة عند الضغط عليها */
+    .full-screen-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        display: none;
+    }
+
+    .full-screen-image img {
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="switch-lang">
+        <i id="langToggle" class="fas fa-language"></i>
+    </div>
+
+    <h1 id="title">Curriculum Vitae</h1>
+<div class="section">
+    <h2 id="personalInfoTitle">Personal Information</h2>
+    <div style="display: flex; align-items: center; flex-direction: row-reverse;">
+        <img id="profileImage" src="user.jpg" alt="Profile Image" style="width: 120px; height: auto; border: 1px solid Black ; cursor: pointer; margin: 20px; border-radius: 8px;">
+        <div>
+            <p><strong id="nameLabel">Name:</strong> <span id="name">Yacine ben mokrane</span></p>
+            <p><strong id="dobLabel">Date of Birth:</strong> <span id="dob">09/09/2007</span></p>
+            <p><strong id="nationalityLabel">Nationality:</strong> <span id="nationality">Algerian</span></p>
+            <p><strong id="statusLabel">Marital Status:</strong> <span id="status">Minor (Single)</span></p>
+        </div>
+    </div>
+</div>
+    <div class="section">
+        <h2 id="contactTitle">Contact Information</h2>
+        <p><strong id="addressLabel">Address:</strong> <span id="address">Algeria/Ain Temouchent/Beni Saf/Sidi Sahbi/158 Housing District, Building 04, No. 03</span></p>
+        <p><strong id="phoneLabel">Phone:</strong> <span id="phone">0795082763</span></p>
+        <p><strong id="emailLabel">Email:</strong> <span id="email">yassinebenmokran@gmail.com</span></p>
+    </div>
+
+    <div class="section">
+        <h2 id="educationTitle">Education</h2>
+        <p id="education">Secondary school student, Year 2, Economics and Management</p>
+    </div>
+
+    <div class="section">
+        <h2 id="experienceTitle">Current Experience</h2>
+        <p id="experience">No experience currently</p>
+    </div>
+
+    <div class="section">
+        <h2 id="interestsTitle">Interests</h2>
+        <p id="interests">Programming, developing, fixing devices, and technology</p>
+    </div>
+
+    <div class="section">
+        <h2 id="languagesTitle">Languages</h2>
+        <p id="languages">Arabic (Excellent), English (Beginner)</p>
+    </div>
+
+    <div class="section">
+        <h2 id="certificatesTitle">Certificates</h2>
+        <p id="certificates">Primary and Middle School Certificates</p>
+    </div>
+
+    <div class="section">
+        <h2 id="projectsTitle">Previous Projects</h2>
+        <p id="projects">Programming projects for apps, websites, tools, scripts, editing, and education</p>
+    </div>
+</div>
+
+
+
+<!-- Footer Section -->
+<div class="footer" style="text-align: center; margin-top: 40px;">
+    <p style="display: flex; align-items: center; justify-content: center;">
+        The entire CV was developed by B.Y PRO 
+        <img src="B.Y PRO.jpg" alt="B.Y PRO Logo" style="width: 10%; height: auto; margin-left: 10px;">
+    </p>
+    <a href="CV.png" target="_blank">
+        <img src="CV.png" alt="CV Icon" style="width: 30%; height: auto; display: block; margin: 10px auto;">
+    </a>
+</div>
+
+
+
+<script>
+    const langToggle = document.getElementById('langToggle');
+    const elements = {
+        title: { en: "Curriculum Vitae", ar: "السيرة الذاتية" },
+        personalInfoTitle: { en: "Personal Information", ar: "المعلومات الشخصية" },
+        nameLabel: { en: "Name:", ar: "الاسم:" },
+        dobLabel: { en: "Date of Birth:", ar: "تاريخ الميلاد:" },
+        nationalityLabel: { en: "Nationality:", ar: "الجنسية:" },
+        statusLabel: { en: "Marital Status:", ar: "الحالة الاجتماعية:" },
+        contactTitle: { en: "Contact Information", ar: "معلومات الاتصال" },
+        addressLabel: { en: "Address:", ar: "العنوان:" },
+        phoneLabel: { en: "Phone:", ar: "رقم الهاتف:" },
+        emailLabel: { en: "Email:", ar: "البريد الإلكتروني:" },
+        educationTitle: { en: "Education", ar: "المستوى التعليمي" },
+        education: { en: "Secondary school student, Year 2, Economics and Management", ar: "طالب ثانوي سنة 2 تسيير واقتصاد" },
+        experienceTitle: { en: "Current Experience", ar: "الخبرات الحالية" },
+        experience: { en: "No experience currently", ar: "لا يوجد خبرات حالياً" },
+        interestsTitle: { en: "Interests", ar: "الاهتمامات" },
+        interests: { en: "برمجة، تطوير، إصلاح الأجهزة، والتكنولوجيا" },
+        languagesTitle: { en: "Languages", ar: "اللغات" },
+        languages: { en: "Arabic (Excellent), English (Beginner)", ar: "العربية (ممتازة)، الإنجليزية (مبتدئ)" },
+        certificatesTitle: { en: "Certificates", ar: "الشهادات" },
+        certificates: { en: "Primary and Middle School Certificates", ar: "شهادة التعليم الابتدائي والمتوسط" },
+        projectsTitle: { en: "Previous Projects", ar: "المشاريع السابقة" },
+        projects: { en: "مشاريع برمجية لبرامج وتطبيقات ومواقع، أدوات وسكربتات برمجية والمونتاج والتطوير." }
+    };
+
+    let currentLang = 'en';
+
+    langToggle.addEventListener('click', () => {
+        currentLang = currentLang === 'en' ? 'ar' : 'en';
+
+        for (const [key, value] of Object.entries(elements)) {
+            document.getElementById(key).textContent = value[currentLang];
+        }
+
+        // تحديث معلومات شخصية
+        document.getElementById('name').textContent = currentLang === 'ar' ? "ياسين بن مقران" : "Yacine ben mokrane";
+        document.getElementById('dob').textContent = currentLang === 'ar' ? "09/09/2007" : "09/09/2007";
+        document.getElementById('nationality').textContent = currentLang === 'ar' ? "جزائري" : "Algerian";
+        document.getElementById('status').textContent = currentLang === 'ar' ? "قاصر (أعزب)" : "Minor (Single)";
+        document.getElementById('address').textContent = currentLang === 'ar' ? "الجزائر/عين تيموشنت/بني صاف/سيدي صحبي/حي 158مسكن عمارة رقم 04 ، رقم 03" : "Algeria/Ain Temouchent/Beni Saf/Sidi Sahbi/158 Housing District, Building 04, No. 03";
+
+        // Adjust the text direction based on the current language
+        if (currentLang === 'ar') {
+            document.body.style.direction = 'rtl';
+            document.body.style.textAlign = 'right';
+        } else {
+            document.body.style.direction = 'ltr';
+            document.body.style.textAlign = 'left';
+        }
+    });
+
+    const profileImage = document.getElementById('profileImage');
+    const fullScreenDiv = document.createElement('div');
+    fullScreenDiv.classList.add('full-screen-image');
+    document.body.appendChild(fullScreenDiv);
+
+    const fullScreenImage = document.createElement('img');
+    fullScreenImage.src = profileImage.src;
+    fullScreenDiv.appendChild(fullScreenImage);
+
+    profileImage.addEventListener('click', () => {
+        fullScreenDiv.style.display = 'flex';
+    });
+
+    fullScreenDiv.addEventListener('click', () => {
+        fullScreenDiv.style.display = 'none';
+    });
+</script>
+
+</body>
+</html>
